@@ -49,7 +49,6 @@ export default {
           (res) => {
             if (res.msg === "获取成功") {
               this.userBlogDetail = res.data;
-              // console.log(this.userBlogDetail);
               this.successGot = this.userBlogDetail.length > 0;
             } else {
               this.successGot = false;

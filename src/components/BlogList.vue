@@ -60,10 +60,11 @@
         </li>
       </ul>
     </div>
-    <div class="blog-pagination" @current-change="changePage">
+    <div class="blog-pagination">
       <el-pagination
         background
         layout="prev, pager, next"
+        :current-page="currentPage"
         :page-size="20"
         :total="total"
         @current-change="changePage"
@@ -96,7 +97,6 @@ export default {
     };
   },
   created() {
-    this.currentPage = 1;
     this.getBlogList(this.currentPage);
   },
   computed: {
@@ -141,6 +141,7 @@ export default {
 @import "../CSS/base.scss";
 
 #blog-list {
+  box-sizing: border-box;
   width: 100%;
   background-color: $white;
   border-radius: 3px;
@@ -148,7 +149,11 @@ export default {
   overflow: hidden;
   margin-bottom: 10px;
   .all-blog {
+    box-sizing: border-box;
+    width: 100%;
     .blog-list {
+      box-sizing: border-box;
+      width: 100%;
       .blog-item {
         width: 100%;
         box-sizing: border-box;
@@ -171,6 +176,8 @@ export default {
         }
         .author-content {
           flex: 1;
+          box-sizing: border-box;
+          width: 100%;
           .article-author {
             padding-bottom: 5px;
             .author-name {
@@ -195,8 +202,6 @@ export default {
             }
           }
           .article-title {
-            //box-sizing: border-box;
-            //border: #6f42c1 1px solid;
             line-height: 1.4;
             font-size: $mediumSize;
             font-weight: bold;

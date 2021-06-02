@@ -6,7 +6,7 @@
       </router-link>
       <span class="user-img flex-center">
         <ElMenu>
-          <img class="active-avatar" :src="userMsg" alt="" />
+          <img class="active-avatar" :src="userMsg" alt="" @click="toMy" />
         </ElMenu>
       </span>
       <router-link :to="{ name: 'Create' }">
@@ -24,6 +24,7 @@
 <script>
 import "../helpers/font_2476494_41gi9ioesqm.js";
 import ElMenu from "@/components/ElMenu.vue";
+import store from "@/store";
 
 export default {
   name: "Nav",
@@ -36,7 +37,13 @@ export default {
       avatarIsActive: false,
     };
   },
-  methods: {},
+  methods: {
+    toMy() {
+      this.$router.push({
+        path: "/my/" + store.getters.userName,
+      });
+    },
+  },
 };
 </script>
 

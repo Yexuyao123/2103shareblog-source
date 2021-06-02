@@ -22,7 +22,6 @@ export default {
     cancelLogin() {
       logout()
         .then((res) => {
-          // console.log(res);
           this.$message({
             message: res.msg,
             type: "success",

@@ -5,7 +5,7 @@
         <Header v-if="!isLogin"></Header>
         <Nav v-if="isLogin" :userMsg="userAvatar"></Nav>
       </header>
-      <main class="flex-top-center">
+      <main>
         <router-view />
       </main>
       <footer>
@@ -34,12 +34,7 @@ export default {
     };
   },
   created() {
-    this.isLogin = null;
-    this.haveCheckLoginStatus = false;
-    this.userName = null;
-    this.userAvatar = "";
     this.checkLogin();
-    // console.log("created时验证完成");
   },
   methods: {
     checkLogin() {
@@ -58,7 +53,11 @@ export default {
         .catch(() => {})
         .finally(() => {
           this.haveCheckLoginStatus = true;
-          if (!this.isLogin) {
+          if (
+            !this.isLogin &&
+            this.$route.name !== "Login" &&
+            this.$route.name !== "Register"
+          ) {
             const tip =
               this.$route.name === "Register" ? "注册账号" : "请先登录";
             this.$message({ type: "error", message: tip, duration: 5000 });
@@ -69,16 +68,9 @@ export default {
   },
   watch: {
     $route(to, from) {
-      // console.log(from);
       if (to.name !== from.name && from.name !== null) {
-        //确保不是第一次进来，from=null
-        // console.log("路由变化了;");
         this.haveCheckLoginStatus = false;
-        // this.isLogin = false;
-        // this.userName = null;
-        // this.userAvatar = "";
         this.checkLogin();
-        // console.log("路由变化验证完成");
       }
     },
   },
@@ -94,8 +86,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   min-height: 100vh;
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 12% 76% 12%;
+  grid-template-columns: 12vw 76vw 12vw;
   grid-template-rows: auto 1fr auto;
   grid-row-gap: 10px;
   grid-template-areas:
@@ -104,13 +97,11 @@ export default {
     "footer footer footer";
   header {
     grid-area: header;
-    //position: fixed;
-    //margin-bottom: 5px;
   }
   main {
+    box-sizing: border-box;
+    max-width: 76vw;
     grid-area: main;
-    //box-sizing: border-box;
-    //border: #6f42c1 1px solid;
   }
   footer {
     grid-area: footer;

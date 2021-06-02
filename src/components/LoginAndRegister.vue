@@ -15,6 +15,7 @@
       @blur="checkInputContent(checkName, userName)"
       @focus="userName.error = false"
       :class="{ 'input-error': userName.error }"
+      @keyup.enter.native="showInfo.method"
     >
     </el-input>
     <span class="password flex-center font-size-m">密码</span>
@@ -29,6 +30,7 @@
       @blur="checkInputContent(checkPassword, userPassword)"
       @focus="userPassword.error = false"
       :class="{ 'input-error': userPassword.error }"
+      @keyup.enter.native="showInfo.method"
     ></el-input>
     <div class="login-button flex-center">
       <el-button

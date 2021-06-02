@@ -15,9 +15,6 @@ export default new Vuex.Store({
     saveLoginState(state, param) {
       state.isLogin = param.isLogin;
       state.userName = param.username;
-      // console.log(
-      //   `登录成功/注销成功，我保存了state${state.isLogin}当前登录的是${state.userName}`
-      // );
     },
   },
   getters: {

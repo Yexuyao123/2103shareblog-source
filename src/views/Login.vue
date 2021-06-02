@@ -12,7 +12,6 @@ export default {
   components: { LoginBlock },
   created() {
     if (this.$store.getters.isLogin) {
-      //如果有从哪个页面来的信息，就回到该页面去
       this.$router.push(decodeURIComponent(this.$route.query.prevUrl || "/"));
     }
   },

@@ -44,7 +44,6 @@ export default {
   methods: {
     checkGetData() {
       if (this.userDetail) {
-        // console.log(this.userDetail);
         this.haveGetUserData = true;
       }
     },

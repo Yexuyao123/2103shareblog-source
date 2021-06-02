@@ -1,7 +1,9 @@
 <template>
   <div id="footer">
-    <span>Copyright © 2020 - 2021 by 叶旭瑶 . All Rights Reserved </span>|
-    <span> 技术支持：xiedaimala.com</span>
+    <span class="not-select"
+      >Copyright © 2020 - 2021 by 叶旭瑶 . All Rights Reserved </span
+    >|
+    <span class="not-select"> 技术支持：xiedaimala.com</span>
   </div>
 </template>
 

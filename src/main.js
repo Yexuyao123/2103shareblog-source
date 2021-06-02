@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-// import ElementUI from "element-ui";
+
 import {
   Dialog,
   Pagination,
@@ -19,7 +19,6 @@ import {
 } from "element-ui";
 
 import "@/assets/element-variables.scss";
-// import "element-ui/lib/theme-chalk/index.css";
 
 // Vue.use(ElementUI);
 Vue.use(Dialog);

@@ -1,7 +1,7 @@
 <template>
   <div id="header">
-    <h1>LET'S SHARE</h1>
-    <span>精品博客汇聚</span>
+    <h1 class="not-select">LET'S SHARE</h1>
+    <span class="not-select">精品博客汇聚</span>
     <div class="button">
       <el-button size="small" @click="changeViewToLogin">立即登录</el-button>
       <el-button size="small" @click="changeViewToCreate">注册账号</el-button>
@@ -10,8 +10,6 @@
 </template>
 
 <script>
-// import { register } from "@/api/auth.js";
-
 export default {
   name: "Header",
   data() {
@@ -40,7 +38,7 @@ export default {
 @import "../CSS/base.scss";
 
 #header {
-  width: 100vw;
+  width: 100%;
   height: 320px;
   background-color: $green;
   color: white;

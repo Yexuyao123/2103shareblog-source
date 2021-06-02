@@ -123,28 +123,20 @@ export const checkBlogContent = (value) => {
 export const checkPhone = (value) => {
   const p = new RegExp(/^1[34578]\d{9}$/);
   if (value === "") {
-    // $("#phone").attr("style", "display:inline");
-    // $("#phone").html("*手机号不能为空！");
-    // $("#submit").attr('disabled',true);
+    // 手机号不能为空！
   } else if (!value.match(p)) {
-    // $("#phone").attr("style", "display:inline");
-    // $("#phone").html("*手机号有误，请修正！"); //手机号格式验证
-    // $("#submit").attr('disabled',true);
+    // 手机号有误，请修正！
   } else {
-    // $("#admin_phone").attr("style", "display:none");
-    // $("#submit").attr('disabled',false);
+    //
   }
 };
 
 export const checkEmail = (value) => {
   const re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
   if (!re.test(value)) {
-    // $("#email").attr("style", "display:inline");
-    // $("#email").html("*邮箱格式不正确！");
-    // $("#submit").attr('disabled',true);
+    //邮箱格式不正确！
   } else {
-    // $("#email").attr("style", "display:none");
-    // $("#email").attr('disabled',false);
+    //
   }
 };
 

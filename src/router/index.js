@@ -36,7 +36,6 @@ const routes = [
     path: "/user/:userId",
     name: "User",
     component: () => import("@/views/User.vue"),
-    //路由元信息
     meta: {
       mustLogin: true,
       title: "用户详情",
@@ -103,7 +102,6 @@ router.beforeEach((to, from, next) => {
     }
   }
   if (to.name !== from.name) {
-    //切换页面前移除未完成请求
     cancelHttp();
     next();
   } else {

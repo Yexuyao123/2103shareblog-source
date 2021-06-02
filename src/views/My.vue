@@ -4,7 +4,6 @@
       <UserDetail :userDetail="myDetail"></UserDetail>
     </template>
     <template v-if="isLogin">
-      <!--      todo:所有的list都完善下总页数-->
       <UserBlogList :userId="myId"></UserBlogList>
     </template>
   </div>
