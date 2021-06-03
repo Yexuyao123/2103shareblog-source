@@ -3,8 +3,12 @@
     <h1 class="not-select">LET'S SHARE</h1>
     <span class="not-select">精品博客汇聚</span>
     <div class="button">
-      <el-button size="small" @click="changeViewToLogin">立即登录</el-button>
-      <el-button size="small" @click="changeViewToCreate">注册账号</el-button>
+      <el-button size="small" @click="changeView('Login', 'login')"
+        >立即登录</el-button
+      >
+      <el-button size="small" @click="changeView('Register', 'register')"
+        >注册账号</el-button
+      >
     </div>
   </div>
 </template>
@@ -18,16 +22,10 @@ export default {
     };
   },
   methods: {
-    changeViewToLogin() {
+    changeView(name, route) {
       this.currentView = this.$route.meta.currentView || "";
-      if (this.currentView !== "Login") {
-        this.$router.push("/login");
-      }
-    },
-    changeViewToCreate() {
-      this.currentView = this.$route.meta.currentView || "";
-      if (this.currentView !== "Register") {
-        this.$router.push("/register");
+      if (this.currentView !== name) {
+        this.$router.push("/" + route);
       }
     },
   },
